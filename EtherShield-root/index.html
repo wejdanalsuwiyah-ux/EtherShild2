@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="EtherShield: نظام دفاع سيبراني مناعي واستباقي يحلل الروابط الاحتيالية بالذكاء الاصطناعي.">
+<title>EtherShield</title>
+<link rel="icon" type="image/png" href="assets/shield.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Michroma&family=Reem+Kufi:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top" dir="rtl">
+  <div class="wrap nav">
+    <a class="brand" href="#lab" aria-label="EtherShield">
+      <img class="logo-light" src="assets/shield.png" alt="">
+      <img class="logo-dark" src="assets/shield-dark.png" alt="">
+      <b>ETHER<span>SHIELD</span></b>
+    </a>
+    <ul>
+      <li><a href="#twin">التوأم الرقمي</a></li>
+      <li><a href="#intent">محرك النية</a></li>
+      <li><a href="#immune">شبكة المناعة</a></li>
+      <li><a href="#evolution">الفرق</a></li>
+      <li><a href="#flow">كيف يعمل</a></li>
+      <li><a href="#team">الفريق</a></li>
+    </ul>
+    <a class="btn cy" href="#lab">افحص رابطًا</a>
+  </div>
+</header>
+
+<main class="wrap" dir="rtl">
+  <section class="hero" id="lab">
+    <div class="hero-copy">
+      <div class="hero-shield">
+        <div class="sh">
+          <img class="logo-light" src="assets/shield.png" alt="شعار EtherShield">
+          <img class="logo-dark" src="assets/shield-dark.png" alt="شعار EtherShield">
+        </div>
+        <div class="wm"><b>ETHER<span>SHIELD</span></b><small>CYBERSECURITY</small></div>
+      </div>
+      <span class="badge"><i></i>نظام دفاع سيبراني مناعي واستباقي</span>
+      <h1>لا تفتح الرابط.<br><em>دع توأمك الرقمي يفتحه عنك.</em></h1>
+      <p class="lead">EtherShield يحلل الروابط الاحتيالية بالذكاء الاصطناعي. توأم رقمي وهمي يقتحم الرابط نيابةً عنك، ومحرك ذكي يقرأ نية الاستدراج النفسي في الرسالة، وشبكة مناعة تشاركية تولّد مصلًا رقميًا لحظيًا يحظر التهديد عن جميع المستخدمين.</p>
+      <div class="cta-row">
+        <a class="btn" href="#twin">اكتشف المحركات الثلاثة</a>
+        <a class="btn ghost" href="#flow">كيف يعمل النظام</a>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div class="rimmed"><div class="bevel" id="console">
+        <div class="scanbeam"></div>
+        <div class="lab-head">
+          <h2>مختبر الفحص</h2>
+          <span class="tag">ES·LAB / SIMULATION</span>
+        </div>
+        <div class="samples" role="group" aria-label="أمثلة جاهزة" id="samples"></div>
+        <div class="field">
+          <label for="msg">نص الرسالة المستلمة</label>
+          <textarea id="msg" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="url">الرابط المشبوه</label>
+          <input id="url" type="text" dir="ltr" spellcheck="false" autocomplete="off">
+        </div>
+        <div class="run-row">
+          <button class="btn cy" id="run" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>
+            أطلق التوأم وافحص
+          </button>
+          <span class="hint">لا يُفتح الرابط على جهازك إطلاقًا.</span>
+        </div>
+        <div class="pipeline" aria-live="polite">
+          <div class="stage" data-s="0"><div class="nm">التوأم الرقمي <span>TWIN</span></div><div class="bar"><i></i></div></div>
+          <div class="stage" data-s="1"><div class="nm">نية الاستدراج <span>INTENT</span></div><div class="bar"><i></i></div></div>
+          <div class="stage" data-s="2"><div class="nm">المصل الرقمي <span>SERUM</span></div><div class="bar"><i></i></div></div>
+        </div>
+        <div class="log" id="log" aria-label="سجل التوأم الرقمي"></div>
+        <div class="result" id="result">
+          <div class="gauge" id="gauge">
+            <svg viewBox="0 0 120 120"><circle class="trk" cx="60" cy="60" r="52"/><circle class="val" cx="60" cy="60" r="52"/></svg>
+            <div class="num"><b id="score">0</b><small>درجة الخطورة</small></div>
+          </div>
+          <div class="verdict">
+            <div class="vt"><span class="pill" id="pill">—</span><h3 id="vtitle">—</h3></div>
+            <ul class="findings" id="findings"></ul>
+            <div class="serum" id="serum" hidden></div>
+          </div>
+        </div>
+      </div></div>
+      <p class="demo-note">نموذج محاكاة تفاعلي يوضّح منطق النظام. النتائج تقديرية ومبنية على مؤشرات داخل الصفحة.</p>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div><b>يتنبأ بالفخ</b><span>قبل أن يصل إليك، لا بعد وقوعه</span></div>
+    <div><b>يقرأ النية</b><span>لا يكتفي بالقوائم السوداء</span></div>
+    <div><b>يحصّن الجميع</b><span>اكتشاف واحد يحمي الشبكة كلها</span></div>
+    <div><b>عربي أولًا</b><span>يفهم أساليب الاحتيال المحلية ولهجاتها</span></div>
+  </div>
+
+  <!-- Twin -->
+  <section class="sec" id="twin">
+    <div class="engine">
+      <div class="e-copy">
+        <span class="e-code">ENGINE 01 · DIGITAL TWIN DETONATION</span>
+        <h3>التوأم الرقمي الوهمي</h3>
+        <p>نُنشئ لكل رابط مشبوه هوية رقمية وهمية كاملة: جهاز، متصفح، موقع جغرافي، وسلوك تصفح بشري. هذا التوأم يقتحم الرابط داخل بيئة معزولة ويتتبّع كل تحويل وكل طلب حتى الصفحة الأخيرة، فيرى الفخ كما كنت ستراه أنت.</p>
+        <ul class="e-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>يتتبع سلاسل إعادة التوجيه والروابط المختصرة حتى الوجهة الحقيقية.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>يرصد نماذج سرقة كلمات المرور ورموز التحقق قبل أن تُعرض عليك.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>يلتقط محاولات تنزيل الملفات الخبيثة والسكربتات المخفية.</span></li>
+        </ul>
+      </div>
+      <div class="twin rimmed"><div class="bevel">
+        <div class="browser-bar"><div class="dots"><i></i><i></i><i></i></div><div class="addr" id="twinAddr">https://<b>bit.ly</b>/3xPr1ze</div></div>
+        <div class="twin-body">
+          <div class="persona">
+            <div class="ghost"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="11" stroke="var(--steel)" stroke-width="2.5" stroke-dasharray="4 3"/><path d="M12 56c2-11 10-17 20-17s18 6 20 17" stroke="var(--steel)" stroke-width="2.5" stroke-dasharray="4 3"/><circle cx="32" cy="24" r="3" fill="var(--cyan)"/></svg></div>
+            <dl>
+              <dt>الهوية</dt><dd class="mono">TWIN-7A31</dd>
+              <dt>الجهاز</dt><dd>هاتف ذكي محاكى</dd>
+              <dt>الموقع</dt><dd>الرياض (مزيّف)</dd>
+              <dt>البيانات</dt><dd>وهمية بالكامل</dd>
+            </dl>
+          </div>
+          <div class="hops" id="hops">
+            <div class="hop"><span class="ic">1</span><div><b>رابط مختصر</b><small>bit.ly/3xPr1ze → 301</small></div></div>
+            <div class="hop"><span class="ic">2</span><div><b>تحويل عبر نطاق وسيط</b><small>promo-gift-sa.click → 302</small></div></div>
+            <div class="hop bad"><span class="ic">!</span><div><b>صفحة تطلب رقم البطاقة ورمز التحقق</b><small>reward-claim.xyz/pay</small></div></div>
+            <div class="hop bad"><span class="ic">!</span><div><b>سكربت يسجّل ضغطات لوحة المفاتيح</b><small>keylog.min.js · 4.2 KB</small></div></div>
+          </div>
+        </div>
+        <div class="twin-foot"><span>زمن الاقتحام: <span class="mono">1.84s</span></span><span>جهازك: <b>لم يُلمس</b></span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- Intent -->
+  <section class="sec" id="intent">
+    <div class="engine flip">
+      <div class="e-copy">
+        <span class="e-code">ENGINE 02 · PSYCHOLOGICAL INTENT</span>
+        <h3>محرك نية الاستدراج النفسي</h3>
+        <p>المحتال لا يعتمد على الرابط وحده، بل على الضغط النفسي في الرسالة. نموذج لغوي مدرّب على أساليب الهندسة الاجتماعية يفكك الرسالة إلى أدوات تلاعب ويقيس شدة كل منها، حتى لو كان الرابط جديدًا ولم يُبلَّغ عنه بعد.</p>
+        <ul class="e-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>الإلحاح والمهلة الزمنية المصطنعة.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11"/></svg><span>انتحال صفة جهة رسمية أو بنك أو شركة شحن.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>التخويف بالإيقاف والغرامة، أو الإغراء بالجائزة والاسترداد.</span></li>
+        </ul>
+      </div>
+      <div class="intent rimmed"><div class="bevel">
+        <div class="sms">
+          <span class="from">رسالة نصية · مرسل غير معروف</span>
+          <mark class="k-auth">البنك</mark>: عميلنا العزيز، تم <mark class="k-fear">تعليق حسابك</mark> مؤقتًا لأسباب أمنية. يرجى <mark class="k-act">تحديث بياناتك</mark> <mark class="k-urg">خلال 24 ساعة</mark> وإلا <mark class="k-fear">سيتم إيقاف</mark> الحساب نهائيًا.
+        </div>
+        <div class="tactics">
+          <div class="tac"><span>التخويف</span><div class="tb"><i style="--w:92%;--c:var(--threat)"></i></div><span class="v">0.92</span></div>
+          <div class="tac"><span>الإلحاح</span><div class="tb"><i style="--w:81%;--c:var(--warn)"></i></div><span class="v">0.81</span></div>
+          <div class="tac"><span>انتحال السلطة</span><div class="tb"><i style="--w:74%;--c:var(--violet)"></i></div><span class="v">0.74</span></div>
+          <div class="tac"><span>طلب إجراء</span><div class="tb"><i style="--w:68%;--c:var(--cyan)"></i></div><span class="v">0.68</span></div>
+          <div class="tac"><span>الإغراء</span><div class="tb"><i style="--w:6%;--c:var(--safe)"></i></div><span class="v">0.06</span></div>
+        </div>
+        <div class="intent-sum"><span>النمط المكتشف: <b>تصيّد بنكي بالتخويف</b></span><span class="mono" style="color:var(--muted)">intent=0.89</span></div>
+      </div></div>
+    </div>
+  
+    <div class="devlab" id="dev-intent">
+      <div class="rimmed"><div class="bevel dl">
+        <div class="dl-head">
+          <div><span class="dl-k">جرّبها بنفسك · 02</span><h3>اكتب رسالة وشاهد المحرك يقرأ نيتها</h3></div>
+          <p>اكتب أي رسالة أو اختر مثالًا. يلوّن المحرك عبارات الضغط النفسي ويقيس شدة كل أسلوب، ثم يجمعها في درجة واحدة.</p>
+        </div>
+        <div class="dl-side">
+          <div class="samples" id="ipSamples"></div>
+          <label for="ipText" class="note">نص الرسالة</label>
+          <textarea class="ip-text" id="ipText"></textarea>
+          <div class="ip-preview" id="ipPreview" aria-live="polite"></div>
+        </div>
+        <div class="dl-side">
+          <div class="tactics" id="ipBars"></div>
+          <div class="ip-total"><span>درجة نية الاستدراج</span><b class="mono" id="ipScore">0</b></div>
+          <span class="note" id="ipVerdict"></span>
+        </div>
+      </div></div>
+    </div>
+</section>
+
+  <!-- Immune -->
+  <section class="sec" id="immune">
+    <div class="engine">
+      <div class="e-copy">
+        <span class="e-code">ENGINE 03 · COLLECTIVE IMMUNE MESH</span>
+        <h3>شبكة المناعة التشاركية</h3>
+        <p>كما يتعلم الجسم من العدوى الأولى، تتعلم الشبكة من أول مستخدم يواجه التهديد. لحظة تأكيد الخطر يُولَّد مصل رقمي (بصمة التهديد ونمطه) ويُوزَّع فورًا على كل الأجهزة المتصلة، فيُحظر الرابط وأشباهه عند الجميع قبل أن يصلهم.</p>
+        <ul class="e-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><path d="m6 7 4 3M18 7l-4 3M6 17l4-3M18 17l-4-3"/></svg><span>يحمي من النسخ المعدّلة للرابط، لا من الرابط نفسه فقط.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.6 8 9.9 4.6-1.3 8-4.9 8-9.9V6z"/></svg><span>يشارك بصمة التهديد فقط، دون أي بيانات شخصية للمستخدم.</span></li>
+        </ul>
+      </div>
+      <div class="mesh rimmed"><div class="bevel">
+        <div class="mesh-tip">اضغط على أي نقطة في الشبكة لتمثيل اكتشاف تهديد جديد عند مستخدم.</div>
+        <canvas id="meshCanvas" aria-label="محاكاة انتشار المصل الرقمي عبر شبكة المستخدمين"></canvas>
+        <div class="mesh-bar">
+          <div><b id="mThreats">0</b><span>تهديدات اكتُشفت</span></div>
+          <div><b id="mImm">0</b><span>عُقد حُصّنت</span></div>
+          <div><b id="mMs">0 ms</b><span>زمن آخر انتشار</span></div>
+        </div>
+        <ul class="feed" id="feed"></ul>
+      </div></div>
+    </div>
+  
+    <div class="devlab" id="dev-mesh">
+      <div class="rimmed"><div class="bevel dl">
+        <div class="dl-head">
+          <div><span class="dl-k">جرّبها بنفسك · 03</span><h3>كيف ينتشر المصل طبقةً بعد طبقة؟</h3></div>
+          <p>المصل ينتقل من الجهاز الذي اكتشف التهديد إلى جيرانه، ثم جيران جيرانه. اضغط أي جهاز لتجعله مصدر الاكتشاف، ثم تابع الانتشار خطوة بخطوة.</p>
+        </div>
+        <div class="dl-side">
+          <svg class="bfs-svg" id="bfsSvg" viewBox="0 0 420 240" role="img" aria-label="شبكة من تسعة أجهزة"></svg>
+          <div class="dl-ctrl">
+            <button class="sbtn pri" type="button" id="bfsStep">الخطوة التالية</button>
+            <button class="sbtn" type="button" id="bfsRun">تشغيل كامل</button>
+            <button class="sbtn" type="button" id="bfsReset">إعادة</button>
+          </div>
+        </div>
+        <div class="dl-side">
+          <div class="step-explain" id="bfsExplain"></div>
+          <div class="vars-label"><span>أجهزة تنتظر دورها في استلام المصل</span></div>
+          <div class="queue" id="bfsQueue"></div>
+          <div class="range"><label for="hopMs">زمن الانتقال بين جهازين</label><input type="range" id="hopMs" min="20" max="300" step="10" value="120"><span class="mono" id="hopVal">120 ms</span></div>
+          <div class="kv">
+            <div><b class="mono" id="bfsDone">0/9</b><span>أجهزة محصّنة</span></div>
+            <div><b class="mono" id="bfsDepth">0</b><span>عدد الطبقات</span></div>
+            <div><b class="mono" id="bfsTime">0 ms</b><span>زمن تحصين الكل</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+</section>
+
+  <!-- Evolution -->
+  <section class="sec" id="evolution">
+    <div class="sec-head">
+      <span class="eyebrow">FROM SCANNING TO IMMUNITY</span>
+      <h2>من فحص تقليدي للروابط إلى منظومة مناعة</h2>
+      <p>أدوات الفحص التقليدية تسأل سؤالًا واحدًا: هل هذا الرابط معروف بأنه خبيث؟ EtherShield يسأل: ماذا سيحدث لو فتحه شخص حقيقي، ولماذا كُتبت الرسالة بهذه الطريقة؟</p>
+    </div>
+    <div class="rimmed"><div class="bevel evo">
+      <table>
+        <thead><tr><th>المحور</th><th>الفحص التقليدي</th><th>EtherShield</th></tr></thead>
+        <tbody>
+          <tr><td>طريقة الكشف</td><td><span class="x">×</span>مطابقة مع قوائم سوداء معروفة</td><td><span class="y">✓</span>اقتحام فعلي للرابط عبر توأم رقمي وهمي</td></tr>
+          <tr><td>الروابط الجديدة</td><td><span class="x">×</span>تمر حتى يُبلَّغ عنها</td><td><span class="y">✓</span>تُكشف من سلوكها ونية رسالتها في أول ظهور</td></tr>
+          <tr><td>الرسالة المرافقة</td><td><span class="x">×</span>تُتجاهل</td><td><span class="y">✓</span>تُحلَّل أدوات الاستدراج النفسي فيها</td></tr>
+          <tr><td>سرعة الحماية</td><td><span class="x">×</span>ساعات إلى أيام لتحديث القوائم</td><td><span class="y">✓</span>مصل رقمي لحظي يصل جميع المستخدمين</td></tr>
+          <tr><td>أمان المستخدم</td><td><span class="x">×</span>قد يفتح المستخدم الرابط للتحقق</td><td><span class="y">✓</span>التوأم يتحمّل المخاطرة بالكامل</td></tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <!-- Flow -->
+  <section class="sec" id="flow">
+    <div class="sec-head">
+      <span class="eyebrow">THE PIPELINE</span>
+      <h2>من وصول الرسالة إلى تحصين الشبكة</h2>
+      <p>أربع مراحل متتابعة تعمل في ثوانٍ، بينما يبقى جهازك بعيدًا عن الرابط.</p>
+    </div>
+    <div class="flow">
+      <div class="step" style="--i:0"><span class="run"></span><h3>الاعتراض</h3><p>تُلتقط الرسالة والرابط قبل الضغط عليه، من الرسائل النصية أو البريد أو تطبيقات المحادثة.</p><span class="t">capture()</span></div>
+      <div class="step" style="--i:1"><span class="run"></span><h3>الاقتحام بالتوأم</h3><p>يفتح التوأم الوهمي الرابط في بيئة معزولة ويسجّل التحويلات والنماذج والملفات.</p><span class="t">twin.detonate()</span></div>
+      <div class="step" style="--i:2"><span class="run"></span><h3>تحليل النية</h3><p>يقيس المحرك أدوات الاستدراج في النص ويدمجها مع سلوك الرابط في حكم واحد.</p><span class="t">intent.score()</span></div>
+      <div class="step" style="--i:3"><span class="run"></span><h3>المصل والتحصين</h3><p>عند تأكيد الخطر يُولَّد مصل رقمي ويُوزَّع فورًا ليحظر التهديد عن جميع المستخدمين.</p><span class="t">mesh.immunize()</span></div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="rimmed"><div class="bevel">
+      <div>
+        <img class="logo-light" src="assets/shield.png" alt="">
+        <img class="logo-dark" src="assets/shield-dark.png" alt="">
+      </div>
+      <div>
+        <h2>كل فخ يُكتشف مرة واحدة، ويُحظر عند الجميع.</h2>
+        <p>جرّب مختبر الفحص بأمثلة جاهزة أو الصق رسالة وصلتك فعلًا.</p>
+      </div>
+      <a class="btn cy" href="#lab">افتح مختبر الفحص</a>
+    </div></div>
+  </section>
+
+
+  <section class="sec" id="team">
+    <div class="sec-head">
+      <span class="eyebrow">THE TEAM</span>
+      <h2>فريق EtherShield</h2>
+      <p>الفريق الذي صمّم المشروع وطوّره.</p>
+    </div>
+    <div class="team" id="teamGrid"></div>
+    
+  </section>
+
+  <footer>
+    <a class="brand" href="#lab"><img class="logo-light" src="assets/shield.png" alt=""><img class="logo-dark" src="assets/shield-dark.png" alt=""><b>ETHER<span>SHIELD</span></b></a>
+    <span>نظام دفاع سيبراني مناعي واستباقي</span>
+    <span class="mono">© 2026 EtherShield</span>
+  </footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
